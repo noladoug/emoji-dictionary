@@ -12,42 +12,20 @@ class definitionViewController: UIViewController {
     
     @IBOutlet weak var emojiDefinition: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
-    var emoji = "NO EMOJI"
-
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var birthYearlLabel: UILabel!
+    
+    var emoji = Emoji()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        emojiLabel.text = emoji
         
-        if emoji == "😀" {
-            emojiDefinition.text = "Generic Smiley"
-        }
-        if emoji == "😇" {
-            emojiDefinition.text = "Angelic Smiley"
-        }
-        if emoji == "💩" {
-            emojiDefinition.text = "Poo Smiley"
-        }
-        if emoji == "🐹" {
-            emojiDefinition.text = "Cute Hamster"
-        }
-        if emoji == "😂" {
-            emojiDefinition.text = "Smiley Laughing Until He Cries"
-        }
-        if emoji == "☹️" {
-            emojiDefinition.text = "Generic Frowny"
-        }
-        if emoji == "🦈" {
-            emojiDefinition.text = "Shark! Smiley"
-        }
-        if emoji == "⛪️" {
-            emojiDefinition.text = "Church"
-        }
-        if emoji == "🚞" {
-            emojiDefinition.text = "Train in the Mountains"
-        }
-        
+        emojiLabel.text = emoji.stringEmoji
+        birthYearlLabel.text = "Birthyear: \(emoji.birthYear)"
+        categoryLabel.text = "Category: \(emoji.category)"
+        emojiDefinition.text = "\(emoji.definition)"
     }
 
     override func didReceiveMemoryWarning() {
